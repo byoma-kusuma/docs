@@ -2,3 +2,5 @@ config:
   azure-native:location: eastus2
   bk-portal-site:gh_token:
     secure: AAABAA2YfrfhLTvoWYTfa/TNe0knaj2GCSYCBgcgIBJ30s3F1QIxn0LDvckNK6WiPSvilmVXO2EBGHkIGZgqenQVxQR0Tc9t
+  docs:gh_token:
+    secure: AAABAN5avUpFev9A8nu2Fmd3YX0H+ykjT3kDmnszbB6lw+zY8TlLqfKxmuZwV9S1z7zh64d2bt/YgcswmkJvx5fA9E9K9P6D
