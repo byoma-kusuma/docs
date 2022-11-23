@@ -11,8 +11,12 @@ const resourceGroup = new azure_native.resources.ResourceGroup(
   }
 );
 
+const isProd = (): boolean => {
+  return stack === "prod";
+};
+
 const staticSite = new azure_native.web.StaticSite("staticSite", {
-  branch: "main",
+  branch: isProd() ? "main" : stack,
   location: resourceGroup.location,
   name: `${stack}-ui`,
   repositoryUrl: "https://github.com/byoma-kusuma/docs",
@@ -38,10 +42,9 @@ const staticSite = new azure_native.web.StaticSite("staticSite", {
 new azure_native.web.StaticSiteCustomDomain(
   `bkportaldocs${stack}customdomain`,
   {
-    domainName:
-      stack === "prod"
-        ? "docs.byomakusuma.com"
-        : `${stack}.docs.byomakusuma.com`,
+    domainName: isProd()
+      ? "docs.byomakusuma.com"
+      : `${stack}.docs.byomakusuma.com`,
     name: staticSite.name,
     resourceGroupName: resourceGroup.name,
   }
