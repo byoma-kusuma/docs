@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Azure Static Website
 
 ## 🚧 Infrastructure as a code using Pulumi and Azure 🚧
