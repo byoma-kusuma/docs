@@ -7,15 +7,15 @@ sidebar_position: 3
 As a team we follow certain conventions and best practices for all the good reasons.
 All the conventions are open to changes should you find better way of doing things that team agrees with.
 
-If you are new to Git, you should ivnest just a bit of time to learn the concept and basics of it.
+If you are new to Git, you should invest just a bit of time to learn the concept and basics of it.
 This tutorial may be helpful to you. [Link](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
 
 ---
 
-## Branching Pattern:
+## Branching Pattern
 
 When you are starting to work on a new feature, pull the latest from dev.
-All of our feature, bugs, hotfixes start from the dev branch.
+All of our feature, bugs, hot fixes start from the dev branch.
 
 There are lots of way of doing this. Vs code give you an intuitive gui experience as well.
 You can also use `git checkout dev` to checkout development branch in your terminal.
@@ -30,7 +30,7 @@ Now create a branch
 - If you are working on a hotfix use **_hotfix/githubIssueId-hotfix-task_** naming pattern
   - example: **_hotfix/133-create-user-error_**
 - If you are working on code refactoring use **_refactoring/githubIssueId-refactor-task_** naming pattern
-  - example: **_hotfix/133-clean-up-envrionemnt-variables_**
+  - example: **_hotfix/133-clean-up-environment-variables_**
 
 You can now start working on the branch.
 
@@ -47,12 +47,12 @@ Here are the links to SonarQube dashboards:
 
 > **⚠ Reminder**: If you are the one merging the pull request, make sure that you are using **_squash and merge_** strategy.
 
-There is CI/CD worflow setup using Github. Once your pull request is merged, your changes will be automatically deploy to dev sites.
+There is CI/CD workflow setup using Github. Once your pull request is merged, your changes will be automatically deploy to dev sites.
 
 Don't worry if you forget the best practices or any the details.
 After merging your first few pull requests, this will be second nature to you.
 
-We'll dive into our first issue in the next chaper and get some hands on coding experience.
+We'll dive into our first issue in the next chapter and get some hands on coding experience.
 
 ---
 
@@ -60,7 +60,7 @@ We'll dive into our first issue in the next chaper and get some hands on coding 
 
 1. Commit early and often. Work in iterations and send smaller code reviews.
 
-   Its easy for the reviwer to get the context and review the code for small reviews.
+   Its easy for the reviewer to get the context and review the code for small reviews.
 
    This also helps you to get feedback very early. You can request for code review even before send a pull request against dev branch.
 

@@ -156,7 +156,7 @@ Run Nest Server in Production mode:
 npm run start:prod
 ```
 
-GraphQL Playground for the NestJS Server is available here: http://localhost:3000/graphql
+GraphQL Playground for the NestJS Server is available here: [Link](http://localhost:3000/graphql)
 
 **[⬆ back to top](#overview)**
 

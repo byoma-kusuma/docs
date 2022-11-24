@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Setup your Tools
+# Setup Tools
 
 In this section we'll setup the basic tools needed for development.
 This is one time setup and you don't need to do this again.
@@ -16,10 +16,10 @@ _Lets start with a list of few of the technologies used in the project._
 3. Postgres DB
 4. Cloudflare for DNS management
 5. Pulumi for infrastructure as code
-6. Sonarcube for code quality review
-7. GraphgQl to communicate between front end and backend
+6. SonarQube for code quality review
+7. GraphQL to communicate between front end and backend
 8. Prisma ORM to interact with database
-9. Azure cloud for infrastrcuture hosting
+9. Azure cloud for infrastructure hosting
 10. Github for version control
 11. Github workflows for CI/CD
 12. Docusaurus powered Internal Wiki
@@ -61,6 +61,7 @@ There are a few extensions in vs code to make our development process easier.
 - alefragnani.Bookmarks
 - bierner.markdown-mermaid
 - esbenp.prettier-vscode
+- streetsidesoftware.code-spell-checker
 
 Please experiment with these as use as you see fit.
 
@@ -72,13 +73,13 @@ Also, while we are at it, change your default line ending format to LF to avoid 
 
 Our tech stack is based on Node js and typescript.
 
-If you haven't setup Node js on your device yet, we recommed intalling Node using node version manager aka NVM.
+If you haven't setup Node js on your device yet, we recommend installing Node using node version manager aka NVM.
 Its available on multiple platforms: Linux, Mac, Windows.
 
 In MAC, NVM can be installed using Homebrew using `brew install nvm`. [Link](https://formulae.brew.sh/formula/nvm)
 
 In windows, NVM can be installed using chocolatey `choco install nvm`. [Link](https://community.chocolatey.org/packages/nvm)
-You may have to run your terminal in elevated privilage mode or administrative mode to run the commands.
+You may have to run your terminal in elevated privilege mode or administrative mode to run the commands.
 
 If you haven't installed `Homebrew` or `chocolatey`, here are instruction to get you started to get you started:
 

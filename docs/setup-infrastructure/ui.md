@@ -9,15 +9,13 @@ sidebar_position: 1
 [Repo Link](https://github.com/byoma-kusuma/core.x.ui/tree/master/infra)
 The code in this repository sets up free static website with custom domain and CI/CD deployment with Github using pulumi.
 
-Here's a good article to read to to understand the flow of the setup
-
-https://cj-hewett.medium.com/deploying-a-frontend-web-app-to-azure-static-web-app-with-pulumi-279347e59782
+Here's a good article to read to to understand the flow of the setup. [Link](https://cj-hewett.medium.com/deploying-a-frontend-web-app-to-azure-static-web-app-with-pulumi-279347e59782)
 
 Before you proceed make sure you have installed the following:
 
-1. Azure Cli: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli
+1. Azure Cli: [Link](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
    - Configure to use the right subscription after you login through `az login`
-2. Pulumi: https://www.pulumi.com/docs/get-started/install/
+2. Pulumi: [Link](https://www.pulumi.com/docs/get-started/install/)
    1. Before you proceed make sure you are familiar with pulumi's basic command.
 
 > **⚠ REMINDER**
@@ -37,30 +35,31 @@ You should find a new github workflow file under `.github/worflows` folder at ro
 In summary,
 
 1. Run `pulumi up`
+
    - Example output:
 
-```bash
-Type                                        Name                        Status                  Info
-+   pulumi:pulumi:Stack                         bk-portal-site-sample         **creating failed**     1 error
-+   ├─ azure-native:resources:ResourceGroup     bk-portal-ui-sample           created
-+   ├─ azure-native:web:StaticSite              staticSite                  created
-+   └─ azure-native:web:StaticSiteCustomDomain  bkportaluiprodcustomdomain  **creating failed**     1 error
+   ```bash
+   Type                                        Name                        Status                  Info
+   +   pulumi:pulumi:Stack                         bk-portal-site-sample         **creating failed**     1 error
+   +   ├─ azure-native:resources:ResourceGroup     bk-portal-ui-sample           created
+   +   ├─ azure-native:web:StaticSite              staticSite                  created
+   +   └─ azure-native:web:StaticSiteCustomDomain  bkportaluiprodcustomdomain  **creating failed**     1 error
 
-Diagnostics:
-  pulumi:pulumi:Stack (bk-portal-site-sample):
-    error: update failed
+   Diagnostics:
+     pulumi:pulumi:Stack (bk-portal-site-sample):
+       error: update failed
 
-  azure-native:web:StaticSiteCustomDomain (bkportaluisamplecustomdomain):
-    error: Code="BadRequest" Message="CNAME Record is invalid.  Please ensure the CNAME record has been created." Details=[{"Message":"CNAME Record is invalid.  Please ensure the CNAME record has been created."},{"Code":"BadRequest"},{"ErrorEntity":{"Code":"BadRequest","ExtendedCode":"51021","Message":"CNAME Record is invalid.  Please ensure the CNAME record has been created.","MessageTemplate":"{0} is invalid.  {1}","Parameters":["CNAME Record","Please ensure the CNAME record has been created."]}}]
+     azure-native:web:StaticSiteCustomDomain (bkportaluisamplecustomdomain):
+       error: Code="BadRequest" Message="CNAME Record is invalid.  Please ensure the CNAME record has been created." Details=[{"Message":"CNAME Record is invalid.  Please ensure the CNAME record has been created."},{"Code":"BadRequest"},{"ErrorEntity":{"Code":"BadRequest","ExtendedCode":"51021","Message":"CNAME Record is invalid.  Please ensure the CNAME record has been created.","MessageTemplate":"{0} is invalid.  {1}","Parameters":["CNAME Record","Please ensure the CNAME record has been created."]}}]
 
-Outputs:
-  url: "example-static-site-url.2.azurestaticapps.net"
+   Outputs:
+     url: "example-static-site-url.2.azurestaticapps.net"
 
-Resources:
-    + 3 created
+   Resources:
+       + 3 created
 
-Duration: 17s
-```
+   Duration: 17s
+   ```
 
 2. Copy the new website address that you'll get as ouput and setup the CNAME dns record in your dns provider pointing your desired domain name to the site url.
 3. Run `pulumi up`
@@ -136,7 +135,7 @@ Then add the following worflow step
 
 ### Commit the file and perform pull request
 
-At the end of it you should have a resource group created in azure with a static website and custom domain. You should also have a CI/CD pipeline using Github Worfklow that builds and deploys to the azure website automatically on any changes to the branch you have selected with proper environment variables securely applied.
+At the end of it you should have a resource group created in azure with a static website and custom domain. You should also have a CI/CD pipeline using Github Workflow that builds and deploys to the azure website automatically on any changes to the branch you have selected with proper environment variables securely applied.
 
 ---
 
@@ -205,9 +204,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_BUSH_025A90B0F }}
           action: "close"
 ```
-
-## Testing
-
-Todo: https://www.pulumi.com/docs/guides/testing/unit/
 
 <h1 align="center"> --- Happy Coding🐘 --- </h1>
